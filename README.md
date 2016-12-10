@@ -28,4 +28,13 @@ The repo is composed by the following files:
   * **averages_Dataset.txt**: the result file obtained at the end of step 5
 
 ## Run code
-In order to execute the script, download run_analysis.R file and place it in your working directory. From Rstudio
+In order to execute the script, download run_analysis.R file and place it in your working directory. From your R IDE execute the following commands:
+
+* source("run_analysis.R")
+* run_analysis()
+
+At the end, the script will have generated:
+
+* the "**UCI HAR Dataset.zip**" file downloaded from the link specified at the beginning of this document
+* the "**UCI HAR Dataset**" directory result of decompressing the previous zip file
+* the **output** directory with the files "**all_in_one_Dataset.txt**" and "**averages_Dataset.txt**"
