@@ -1,6 +1,6 @@
 # Getting and Cleaning Data Course Project
 
-## Introduction
+## __Introduction__
 This repo contains the files required in the peer-graded Assignment of week 4 of Getting and Cleaning Data course.
 
 The data for the project can be downloaded from this link:
@@ -8,7 +8,7 @@ The data for the project can be downloaded from this link:
     https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 
-## Purpose
+## __Purpose__
 The purpose of the project is to create one R script called **run_analysis.R** that does the following:
 
 1. Merges the training and the test sets to create one data set.
@@ -17,7 +17,7 @@ The purpose of the project is to create one R script called **run_analysis.R** t
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-## Components 
+## __Components__ 
 The repo is composed by the following files:
 
 * **README.md**: this file
@@ -27,7 +27,7 @@ The repo is composed by the following files:
   * **all_in_one_Dataset.txt**: the result file obtained at the end of step 4
   * **averages_Dataset.txt**: the result file obtained at the end of step 5
 
-## Run code
+## __Run code__
 In order to execute the script, download run_analysis.R file and place it in your working directory. From your R IDE execute the following commands:
 
 * source("run_analysis.R")
