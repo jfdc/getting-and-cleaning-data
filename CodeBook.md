@@ -106,3 +106,29 @@ The following is a description of the steps taken to process the information and
 - The same treatment described in the previous point is done for the **y_train.txt** file.
 
 - Reads the **subject_test.txt** and **subject_train.txt** and stores its content in a data.frame called **subjectTest** and **subjectTraining** respectively.
+
+- Reads the **X_test.txt** and **X_train.txt** and stores its content in a data.frame called **dataTest** and **dataTraining** respectively.
+
+At this point, we have all the information we need to join the data that was separated in different files:
+
+- Generates a **testTable** data.frame with the following 69 columns:
+  - **dataType**, with the fixed content "**Test**"
+  - **SubjectID**, whose values come from column **subjectTest$SubjectID**
+  - **Activity**, whose values come from column **activitiesTest$Activity**
+  - and 66 feature columns from **dataTest** data.frame whose names contain the particle **mean** or **std**
+
+- Generates a **trainingTable** data.frame with the following 69 columns:
+  - **dataType**, with the fixed content "**Training**"
+  - **SubjectID**, whose values come from column **subjectTraining$SubjectID**
+  - **Activity**, whose values come from column **activitiesTraining$Activity**
+  - and 66 feature columns from **dataTraining** data.frame whose names contain the particle **mean** or **std**
+  
+Now, we have a table with the whole information for Test and another table for Training. The process generates a data.frame called **totalTable** as a result of merging **testTable** and **trainingTable**. The contents of the resulting table are recorded in a file named "**all_in_one_Dataset.txt**" in the **output** subdirectory.
+
+Finally, in order to generate the final file with the average of each variable for each activity and each subject, the process performs the following steps:
+
+- Group the contents of the **totalTable** data.frame by the **Activity** and **SubjectID** columns and generates a data.frame called **groupedTable** 
+- Apply the mean function over all the feature columns using **summarise_each** function and generates a data.frame called **summariseTable**
+- Write the content of **summarise_each** over a file called "**averages_Dataset.txt**" in the **output** subdirectory.
+
+The described process is implemented in the **run_analysis.R** script included in this repo. On the other hand, files "**all_in_one_Dataset.txt**" and "**averages_Dataset.txt**" are also included under the **output** folder. 
