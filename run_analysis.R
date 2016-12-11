@@ -83,7 +83,7 @@ run_analysis <- function(){
                             Activity=activitiesTest$Activity,
                             dataTest[,grepl("_mean_|_mean$|_std_|_std", featureLabels$featureName)])
     #
-    dataTable <- data.frame(dataType="Training", SubjectID=subjectTraining$SubjectID, 
+    trainingTable <- data.frame(dataType="Training", SubjectID=subjectTraining$SubjectID, 
                             Activity=activitiesTraining$Activity,
                             dataTraining[,grepl("_mean_|_mean$|_std_|_std", featureLabels$featureName)])
     
@@ -92,7 +92,7 @@ run_analysis <- function(){
     # Generate a data frane with test and training data put together
     # Write the merged table to tydyDataset.txt file
     ################################################################################
-    totalTable <- rbind(testTable, dataTable)
+    totalTable <- rbind(testTable, trainingTable)
     if(!file.exists("./output")){dir.create("./output")}
     write.table(totalTable, file="./output/all_in_one_Dataset.txt",row.names=FALSE)
     
