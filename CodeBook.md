@@ -61,3 +61,8 @@ Only the following files will be processed in this project:
     560 angle(Y,gravityMean)
     561 angle(Z,gravityMean)
 ```
+- **subject_test.txt/subject_train.txt**: Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+- **X_test.txt/X_train.txt**: Each row is a vector of 561 features.
+
+- **y_test.txt/y_train.txt**: Each row indicates the type of activity measured in each row in files **X_test.txt/X_train.txt** respectively.
